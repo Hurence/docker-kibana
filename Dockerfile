@@ -1,4 +1,3 @@
-# -oss version does not includes X-Pack and we do not want authentication
 FROM docker.elastic.co/kibana/kibana:5.4.3
 MAINTAINER Hurence
 
@@ -9,8 +8,7 @@ ADD kibana.yml /usr/share/kibana/config/
 USER root
 RUN chown kibana:kibana config/kibana.yml
 
-# 
+# TODO
 #COPY dashboards/ApacheWeblogsDashboard.json
-#RUN
 
 ENTRYPOINT runuser -l kibana -c '/usr/local/bin/kibana-docker'
